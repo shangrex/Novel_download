@@ -3,16 +3,17 @@ from bs4 import BeautifulSoup
 import logging
 from hanziconv import HanziConv
 
-logging.basicConfig(level=logging.DEBUG, format='')
+logging.basicConfig(level=logging.CRITICAL, format='')
 
 
 url = input()
+n = int(input())
 l = []
-for i in range(10):
+for i in range(n):
     logging.debug(url)
     
     html_file = requests.get(url)
-    #logging.debug(html_file.encoding)
+    logging.debug(html_file.encoding)
 
     html_file.encoding = "gb2312"
 
@@ -27,7 +28,7 @@ for i in range(10):
 
     with open("file_name.txt", "a") as file:
         for data in content:
-            #logging.debug(data.text)
+            logging.debug(data.text)
             file.write(data.text)
     file.close()
     
