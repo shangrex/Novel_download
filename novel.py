@@ -2,41 +2,29 @@ import requests
 from bs4 import BeautifulSoup
 import logging
 from hanziconv import HanziConv
+from module.ptt import Ptt
+#from module.ptt import good
+from module.piaotian import piaotian
+import warnings
+from urllib3.exceptions import InsecureRequestWarning
+warnings.simplefilter('ignore',InsecureRequestWarning)
+
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 logging.basicConfig(level=logging.CRITICAL, format='')
 
 
-url = input()
-n = int(input())
-l = []
-for i in range(n):
-    logging.debug(url)
-    
-    html_file = requests.get(url)
-    logging.debug(html_file.encoding)
+'''
+test = Ptt("https://www.ptt.cc/bbs/Gossiping/index.html")
+test.find_title("https://www.ptt.cc/bbs/Gossiping/index.html")
 
-    html_file.encoding = "gb2312"
+for i in range(5):
+    newurl = test.privious_page()
+    test.find_title(newurl)
 
-    if html_file.status_code == requests.codes.ok:
-        logging.debug("success to get the web content")
-    else:
-        logging.debug("disable to access the web")
-    html_traditional = HanziConv.toTraditional(html_file.text)
+'''
 
-    soup = BeautifulSoup(html_traditional, 'html.parser')
-    content = soup.find_all('br')
-
-    with open("file_name.txt", "a") as file:
-        for data in content:
-            logging.debug(data.text)
-            file.write(data.text)
-    file.close()
-    
-    l = url.split("/")
-    num = l[6].split(".")
-    tmp = str(int(num[0])+1) + '.' +  num[1]
-    url = url.replace(num[0]+'.'+num[1], tmp)
-    
-
-
-
+test2 = piaotian()
+test2.read("https://www.ptwxz.com/html/6/6760/3801311.html")
