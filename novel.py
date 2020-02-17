@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import logging
 from hanziconv import HanziConv
 from module.ptt import Ptt
+from module.wenku8 import wenku8
 #from module.ptt import good
 from module.piaotian import piaotian
 import warnings
@@ -25,6 +26,16 @@ for i in range(5):
     test.find_title(newurl)
 
 '''
-
+'''
 test2 = piaotian()
-test2.read("https://www.ptwxz.com/html/6/6760/3801311.html")
+test2.read("https://www.wenku8.net/modules/article/reader.php?aid=2111&cid=76180")
+'''
+
+test3 = wenku8()
+test3.read("https://www.wenku8.net/novel/2/2111/76180.htm")
+
+for i in range(3):
+    
+    newurl = test3.nextpage("https://www.wenku8.net/novel/2/2111")
+    #print(newurl)
+    test3.read(newurl)

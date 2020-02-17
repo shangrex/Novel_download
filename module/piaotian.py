@@ -43,24 +43,24 @@ for i in range(n):
 
 class piaotian():
     def read(self, url):
-        html_file = requests.get(url, verify = True, headers = {
+        
+        html_file = requests.get(url, verify = False, headers = {
             "user-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-
         })
         
-        html_file = requests.get(url)
+        #html_file = requests.get(url)
         logging.debug(html_file.encoding)
 
-        html_file.encoding = "gb2312"
+        #html_file.encoding = "gb2312"
 
         if html_file.status_code == requests.codes.ok:
             logging.debug("success to get the web content")
         else:
             logging.debug("disable to access the web")
 
-        html_traditional = HanziConv.toTraditional(html_file.text)
+        #html_traditional = HanziConv.toTraditional(html_file.text)
 
-        soup = BeautifulSoup(html_traditional, 'html.parser')
+        soup = BeautifulSoup(html_file, 'html.parser')
         content = soup.find_all('br')
 
         print(content)
