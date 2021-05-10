@@ -66,7 +66,7 @@ while count_recommend_page < max_rpage:
 
         soup = BeautifulSoup(html_file.content, 'html.parser')
         
-        
+        #get in to the table of contents
         # print(soup)
 
         intro_href = soup.find_all('caption')
@@ -90,7 +90,7 @@ while count_recommend_page < max_rpage:
 
         soup = BeautifulSoup(html_file.content, 'html.parser')
 
-        # print("split line")
+        
         # print(soup)
 
         table_soup = soup.find_all('li')
@@ -102,6 +102,7 @@ while count_recommend_page < max_rpage:
             atr = HanziConv.toTraditional(str(name_soup.contents[0][3:]))
         except:
             i -= 1
+        #get the list of novel's chapter
         # print(table_soup)
 
         #chapter name
@@ -123,7 +124,7 @@ while count_recommend_page < max_rpage:
             if tmp == "" or tmp == None:
                 count_page -= 1
                 continue
-
+            
             # print(tmp)
 
             cpt_list.append(tmp)

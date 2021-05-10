@@ -21,3 +21,4 @@ python_version = "3.8"
 
 [scripts]
 piaotian = "python -m src.script.piaotian_list"
+mingyan = "python -m src.script.mingyantong_list"

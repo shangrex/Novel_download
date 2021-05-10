@@ -13,6 +13,9 @@ for fun
 
 * data format
     ![](https://i.imgur.com/fGPU6dK.png)
+* running screen
+    ![](https://i.imgur.com/IwE6Vh4.png)
+
 * command
     ```
     pipenv run piaotian
