@@ -26,16 +26,16 @@ for i in range(5):
     test.find_title(newurl)
 
 '''
-'''
+
 test2 = piaotian()
 test2.read("https://www.wenku8.net/modules/article/reader.php?aid=2111&cid=76180")
-'''
 
-test3 = wenku8()
-test3.read("https://www.wenku8.net/novel/2/2111/76180.htm")
 
-for i in range(3):
+# test3 = wenku8()
+# test3.read("https://www.wenku8.net/novel/2/2111/76180.htm")
+
+# for i in range(3):
     
-    newurl = test3.nextpage("https://www.wenku8.net/novel/2/2111")
-    #print(newurl)
-    test3.read(newurl)
+#     newurl = test3.nextpage("https://www.wenku8.net/novel/2/2111")
+#     #print(newurl)
+#     test3.read(newurl)

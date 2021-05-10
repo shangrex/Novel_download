@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+beautifulsoup4 = "==4.8.1"
+certifi = "==2019.11.28"
+chardet = "==3.0.4"
+hanziconv = "==0.3.2"
+idna = "==2.8"
+requests = "==2.22.0"
+soupsieve = "==1.9.5"
+requests-html = "*"
+pandas = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+piaotian = "python -m src.script.piaotian_list"
