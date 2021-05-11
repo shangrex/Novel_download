@@ -60,6 +60,6 @@ def proxies_list():
 
 
 def time_sleep():
-    t = random.randint(-10, 10)
-    print("=="*10+"sleeping"+"=="*10, 60+t)
-    time.sleep(60+t)
+    t = random.randint(-20, 20)
+    print("=="*10+"sleeping"+"=="*10, 120+t)
+    time.sleep(120+t)
