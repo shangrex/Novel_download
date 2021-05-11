@@ -20,3 +20,22 @@ for fun
     ```
     pipenv run piaotian
     ```
+
+## mingyan_list
+* description:
+    download the motto from minyangtong
+
+* target webpage
+    ![](https://i.imgur.com/WvNr7YG.png)
+
+* data format
+
+
+* running screen
+
+* command
+    ```
+    pipenv run mingyan
+    ```
+* warning
+    every webcrawl has 10 sec sleep time

@@ -13,6 +13,7 @@ requests = "==2.22.0"
 soupsieve = "==1.9.5"
 requests-html = "*"
 pandas = "*"
+opencc = "*"
 
 [dev-packages]
 

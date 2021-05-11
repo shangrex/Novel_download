@@ -8,6 +8,8 @@ from data.stopwords import stopwords
 import pandas as pd
 import urllib3
 import time 
+import opencc
+converter = opencc.OpenCC('s2twp.json')
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 url = "https://www.ptwxz.com/booktopallvote/0/1.html"
@@ -99,7 +101,7 @@ while count_recommend_page < max_rpage:
         # print(name_soup.contents[0])
         try:
         #find author name
-            atr = HanziConv.toTraditional(str(name_soup.contents[0][3:]))
+            atr = converter.convert(str(name_soup.contents[0][3:]))
         except:
             i -= 1
         #get the list of novel's chapter
@@ -130,7 +132,7 @@ while count_recommend_page < max_rpage:
             cpt_list.append(tmp)
             
             # title_list.append(HanziConv.toTraditional(str(i.string)))
-            tmp_list.append(HanziConv.toTraditional(str(j.string)))
+            tmp_list.append(converter.convert(str(j.string)))
 
         #content of novel
         for j, k in zip(cpt_list, tmp_list):
@@ -138,7 +140,7 @@ while count_recommend_page < max_rpage:
             print("novel content link")
             print(table_url+j)
             html_file.encoding = "gbk"
-            html_traditional = HanziConv.toTraditional(html_file.text)
+            html_traditional = converter.convert(html_file.text)
             soup = BeautifulSoup(html_traditional, 'html.parser')
 
             h1_name = soup.find("h1")
@@ -170,6 +172,6 @@ while count_recommend_page < max_rpage:
 
     count_recommend_page += 1
 
-pd = pd.DataFrame({"paragraphs": cnt_list, "name":name_list,
+pd_novel = pd.DataFrame({"paragraphs": cnt_list, "name":name_list,
                  "author":atr_list, "title":title_list})
-pd.to_csv("novel.csv")
+pd_novel.to_csv("novel_cc.csv")
