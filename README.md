@@ -4,7 +4,21 @@ for fun
 * ptt
 * piaotian
 
+## Setup environment
+* clone to the local
+    ```
+    git clone https://github.com/shangrex/Novel_download.git
+    ```
+* open the virtual enviroment
+    ```
+    pipenv shell
+    ```
+* download the package
+    ```
+    pipenv install --dev
+    ```
 
+    
 ## piaotian_list
 * description:
     Download each novel first pages and build the csv data
