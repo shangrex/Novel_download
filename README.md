@@ -11,14 +11,14 @@ for fun
     ```
 * open the virtual enviroment
     ```
-    pipenv shell
+    cd Novel_download && pipenv shell
     ```
 * download the package
     ```
     pipenv install --dev
     ```
 
-    
+
 ## piaotian_list
 * description:
     Download each novel first pages and build the csv data
@@ -43,6 +43,7 @@ for fun
     ![](https://i.imgur.com/WvNr7YG.png)
 
 * data format
+    ![](https://i.imgur.com/Pk5nmVV.png)
 
 
 * running screen

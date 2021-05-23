@@ -68,8 +68,9 @@ while count_recommend_page <= max_r_pages:
             print("books pages", j)
             if j > max_pages:
                 break
-            print("=="*10+"waiting time"+"=="*10)
-            time_sleep()    
+            
+            time_sleep() 
+            print("book detailed...", book_url+f"?page={j}")   
             html_file = requests.get(book_url+f"?page={j}", verify = False, headers=mingying_headers())
 
             soup = BeautifulSoup(html_file.content, 'html.parser')

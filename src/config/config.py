@@ -40,12 +40,13 @@ def mingying_headers():
     return {
         'content-type' : content,
         'user-agent' : header,
-        'referer': "https://www.mingyantong.com/writers",
         'accept-encoding':"gzip, deflate, br",
         'authority': "www.mingyantong.com",
-        'path': "/allarticle/zhaichao",
+        'schema' : 'https',
+        'referer': 'https://www.mingyantong.com/allarticle/zhaichao'
     }
 #    'sec-ch-ua': " Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90"
+# 'referer': "https://www.mingyantong.com/writers",
 
 
 def proxies_list():
@@ -60,6 +61,6 @@ def proxies_list():
 
 
 def time_sleep():
-    t = random.randint(-20, 20)
-    print("=="*10+"sleeping"+"=="*10, 120+t)
-    time.sleep(120+t)
+    t = random.randint(-60, 60)
+    print("=="*10+"sleeping"+"=="*10, 240+t)
+    time.sleep(240+t)
