@@ -7,7 +7,7 @@ cssselect==1.1.0
 fake-useragent==0.1.11
 hanziconv==0.3.2
 idna==2.8
-lxml==4.6.3
+lxml==4.9.1
 numpy==1.20.3
 pandas==1.2.4
 parse==1.19.0
